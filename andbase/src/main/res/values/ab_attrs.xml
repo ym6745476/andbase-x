@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="colorPrimaryTranslucent" format="reference" />
+    <attr name="colorPrimaryDarkTranslucent" format="reference" />
+
+    <declare-styleable name="AbAnalogClock">
+        <attr name="dialDrawable" format="reference" />
+        <attr name="hourDrawable" format="reference" />
+        <attr name="minuteDrawable" format="reference" />
+        <attr name="secondDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AbSlideLayout">
+        <attr name="normalBackground" format="reference" />
+        <attr name="pressedBackground" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AbSwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean"/>
+        <attr name="ios" format="boolean"/>
+        <attr name="leftSwipe" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="AbCircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_overlay" format="boolean" />
+        <attr name="fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="AbAspectRatioImageView">
+        <attr name="width_ratio" format="integer"/>
+        <attr name="height_ratio" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="AbSwitchButton">
+        <attr name="thumbDrawable" format="reference"/>
+        <attr name="thumbColor" format="color|reference"/>
+        <attr name="thumbMargin" format="dimension|reference"/>
+        <attr name="thumbMarginTop" format="dimension|reference"/>
+        <attr name="thumbMarginBottom" format="dimension|reference"/>
+        <attr name="thumbMarginLeft" format="dimension|reference"/>
+        <attr name="thumbMarginRight" format="dimension|reference"/>
+        <attr name="thumbWidth" format="dimension|reference"/>
+        <attr name="thumbHeight" format="dimension|reference"/>
+        <attr name="thumbRadius" format="dimension|reference"/>
+        <attr name="backRadius" format="dimension|reference"/>
+        <attr name="backDrawable" format="reference"/>
+        <attr name="backColor" format="color|reference"/>
+        <attr name="fadeBack" format="boolean"/>
+        <attr name="backMeasureRatio" format="float"/>
+        <attr name="animationDuration" format="integer"/>
+        <attr name="tintColor" format="color|reference"/>
+        <attr name="textOn" format="string"/>
+        <attr name="textOff" format="string"/>
+        <attr name="textMarginH" format="dimension"/>
+        <attr name="autoAdjustTextPosition" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="AbCoordinatorTabLayout">
+        <attr name="contentScrim" format="color" />
+        <attr name="tabIndicatorColor" format="color" />
+        <attr name="tabTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="AbTabMenuItemView">
+        <attr name="tabIconNormal" format="reference" />
+        <attr name="tabIconSelected" format="reference" />
+        <attr name="tabText" format="string" />
+        <attr name="tabTextSize" format="dimension" />
+        <attr name="textColorNormal" format="color" />
+        <attr name="textColorSelected" format="color" />
+        <attr name="badgeBackgroundColor" format="color" />
+        <attr name="paddingTexwithIcon" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="AbIndicatorView">
+
+        <!-- 设置指示器显示的总个数 -->
+        <attr name="indicator_count" format="integer" />
+        <!-- 指示器绘图的默认颜色 -->
+        <attr name="indicator_color" format="reference|color" />
+        <!-- 指示器绘图的select形式，会覆盖indicator_color设置的值-->
+        <attr name="indicator_drawable" format="reference" />
+        <!-- 指示器绘图的半径 -->
+        <attr name="indicator_radius" format="reference|dimension" />
+        <!-- 指示器绘图的选中时放缩比例 -->
+        <attr name="indicator_select_scale" format="float" />
+        <!-- 指示器默认选中的单元 -->
+        <attr name="indicator_select" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="AbIndicatorViewPager">
+        <attr name="clip_children" format="boolean" />
+        <attr name="arc_bottom" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="AbPickerView">
+        <attr name="itemTextSize" format="integer" />
+        <attr name="lineSpace" format="float" />
+        <attr name="centerTextColor" format="integer" />
+        <attr name="outerTextColor" format="integer" />
+        <attr name="dividerTextColor" format="integer" />
+        <attr name="itemsVisibleCount" format="integer" />
+        <attr name="isLoop" format="boolean" />
+        <attr name="initialPosition" format="integer" />
+        <attr name="scaleX" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="AbScanRectView">
+        <attr name="inner_width" format="dimension"/>
+        <attr name="inner_height" format="dimension"/>
+        <attr name="inner_corner_color" format="color" />
+        <attr name="inner_corner_length" format="dimension" />
+        <attr name="inner_corner_width" format="dimension" />
+        <attr name="inner_scan_bitmap" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AbRoundImageView">
+        <attr name="radius" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="AbCalendarView">
+        <attr name="ab_calendarTheme" format="integer"/>
+        <attr name="ab_calendarRecordImage" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="AbSlantedTextView">
+        <attr name="slantedTextSize" format="dimension"/>
+        <attr name="slantedBackgroundColor" format="color"/>
+        <attr name="slantedText" format="string"/>
+        <attr name="slantedTextColor" format="color"/>
+        <attr name="slantedLength" format="dimension"/>
+        <attr name="slantedMode" format="enum">
+            <enum name="left" value="0"></enum>
+            <enum name="right" value="1"></enum>
+            <enum name="left_bottom" value="2"></enum>
+            <enum name="right_bottom" value="3"></enum>
+            <enum name="left_triangle" value="4"></enum>
+            <enum name="right_triangle" value="5"></enum>
+            <enum name="left_bottom_triangle" value="6"></enum>
+            <enum name="right_bottom_triangle" value="7"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="AbIndicatorProgressBar">
+        <attr name="progressIndicator" format="reference" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="textStyle">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="textAlign">
+            <flag name="left" value="0" />
+            <flag name="center" value="1" />
+            <flag name="right" value="2" />
+        </attr>
+        <attr name="offset" format="dimension" />
+    </declare-styleable>
+
+</resources>

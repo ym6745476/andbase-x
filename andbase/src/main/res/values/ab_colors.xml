@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_translucent">#20FFFFFF</color>
+    <color name="white_dark_translucent">#60EEEEEE</color>
+
+    <color name="black">#000000</color>
+    <color name="black_translucent">#20000000</color>
+    <color name="black_dark_translucent">#88000000</color>
+
+    <color name="concise">#FAFAFA</color>
+    <color name="concise_translucent">#20FAFAFA</color>
+
+    <color name="concise_light">#F8F8F8</color>
+    <color name="concise_light_translucent">#20F8F8F8</color>
+
+    <color name="concise_dark">#888888</color>
+    <color name="concise_dark_translucent">#60888888</color>
+
+    <color name="blue">#2AB4FB</color>
+    <color name="blue_translucent">#202AB4FB</color>
+
+    <color name="blue_light">#45C2EE</color>
+    <color name="blue_light_translucent">#2045C2EE</color>
+
+    <color name="blue_dark">#43A3F9</color>
+    <color name="blue_dark_translucent">#6043A3F9</color>
+
+    <color name="pink">#FF4081</color>
+    <color name="pink_translucent">#20FF4081</color>
+
+    <color name="pink_light">#FF80AB</color>
+    <color name="pink_translucent_light">#20FF80AB</color>
+
+    <color name="pink_dark">#FF1681</color>
+    <color name="pink_dark_translucent">#60FF1681</color>
+
+    <color name="green">#00c853</color>
+    <color name="green_translucent">#2000c853</color>
+
+    <color name="green_light">#69F0AE</color>
+    <color name="green_light_translucent">#2069F0AE</color>
+
+    <color name="green_dark">#009933</color>
+    <color name="green_dark_translucent">#60009933</color>
+
+    <color name="orange">#FFAB40</color>
+    <color name="orange_translucent">#20FFAB40</color>
+
+    <color name="orange_light">#FFD180</color>
+    <color name="orange_light_translucent">#20FFD180</color>
+
+    <color name="orange_dark">#FF6E40</color>
+    <color name="orange_dark_translucent">#20FF6E40</color>
+
+    <color name="red">#FF5252</color>
+    <color name="red_translucent">#20FF5252</color>
+
+    <color name="red_light">#FF8A80</color>
+    <color name="red_light_translucent">#20FF8A80</color>
+
+    <color name="purple">#E040FB</color>
+    <color name="purple_translucent">#20E040FB</color>
+
+    <color name="purple_light">#EA80FC</color>
+    <color name="purple_light_translucent">#20EA80FC</color>
+
+    <color name="teal">#64FFDA</color>
+    <color name="teal_translucent">#2064FFDA</color>
+
+    <color name="teal_light">#A7FFEB</color>
+    <color name="teal_light_translucent">#20A7FFEB</color>
+
+    <color name="cyan">#18FFFF</color>
+    <color name="cyan_translucent">#2018FFFF</color>
+
+    <color name="cyan_light">#84FFFF</color>
+    <color name="cyan_light_translucent">#2084FFFF</color>
+
+    <color name="yellow">#FFFF00</color>
+    <color name="yellow_translucent">#20FFFF00</color>
+
+    <color name="yellow_light">#FFFF8D</color>
+    <color name="yellow_light_translucent">#20FFFF8D</color>
+
+    <color name="gray">#EEEEEE</color>
+    <color name="gray_translucent">#20EEEEEE</color>
+
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_light_translucent">#20F5F5F5</color>
+
+    <color name="gray_dark">#BDBDBD</color>
+    <color name="gray_dark_2">#9E9E9E</color>
+    <color name="gray_dark_3">#757575</color>
+    <color name="gray_dark_4">#616161</color>
+    <color name="gray_dark_5">#424242</color>
+    <color name="gray_dark_6">#212121</color>
+
+    <color name="app_bg">#FAFAFA</color>
+    <color name="app_bg_light">#F8F8F8</color>
+    <color name="app_bg_dark">#F5F5F5</color>
+
+    <color name="app_line">#F5F5F5</color>
+    <color name="app_line_light">#F1F1F1</color>
+    <color name="app_line_dark">#BDBDBD</color>
+
+    <color name="app_text_black">#333333</color>
+    <color name="app_text_dark">#666666</color>
+    <color name="app_text_light">#999999</color>
+
+    <color name="app_tag_blue">#2AB4FB</color>
+    <color name="app_tag_green">#19be6b</color>
+    <color name="app_tag_yellow">#ff9900</color>
+    <color name="app_tag_pink">#FF80AB</color>
+
+</resources>
+

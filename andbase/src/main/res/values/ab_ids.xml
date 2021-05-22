@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <item type="id" name="ab_view_pager" />
+
+    <item type="id" name="ab_image_view" />
+
+    <item type="id" name="ab_text_view" />
+
+    <item type="id" name="ab_content_view" />
+
+    <item type="id" name="ab_empty_view" />
+
+
+    <item type="id" name="progress" />
+
+    <item type="id" name="indicator" />
+
+</resources>

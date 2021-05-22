@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center" />
+
+        <com.andbase.library.camera.AbScanRectView
+            android:id="@+id/scan_rect_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            app:inner_scan_bitmap="@drawable/scan_light_blue"
+            app:inner_corner_color="@color/blue"/>
+
+        <ImageView
+            android:id="@+id/flash_btn"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/flash_selected_selector"/>
+
+        <include
+            layout="@layout/ab_toolbar_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Album.MatchParent"
+    android:background="@color/app_bg"
+    android:fitsSystemWindows="true">
+
+    <com.yanzhenjie.album.widget.photoview.FixViewPager
+        android:id="@+id/view_pager"
+        style="@style/Album.MatchParent"
+        android:background="@color/black"/>
+
+    <RelativeLayout style="@style/Album.MatchParent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            style="@style/Album.AppBar.General.Transparent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:theme="@style/Toolbar.TitleText.White"
+                app:subtitleTextColor="@color/white"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
+                android:id="@+id/layout_bottom"
+                style="@style/Album.MatchParent.SheetBottom"
+                android:background="@color/albumSheetBottom">
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    style="@style/Album.WrapContent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/album_dp_10"
+                    android:layout_marginLeft="@dimen/album_dp_10"
+                    android:drawableStart="@drawable/album_tag_video_white"
+                    android:drawableLeft="@drawable/album_tag_video_white"
+                    android:drawablePadding="@dimen/album_dp_4"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/check_box"
+                    style="@style/Album.CheckBox.WrapContent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/album_dp_10"
+                    android:layout_marginRight="@dimen/album_dp_10"
+                    android:text="@string/album_check"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/album_sp_16" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/layout_layer"
+                style="@style/Album.MatchParent.SheetBottom"
+                android:background="@color/albumSheetLayer">
+
+                <TextView
+                    style="@style/Album.WrapContent"
+                    android:layout_gravity="center"
+                    android:text="@string/album_item_unavailable"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/album_sp_18" />
+            </FrameLayout>
+        </FrameLayout>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Album.MatchParent"
+    android:background="@color/app_bg"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        style="@style/Album.AppBar.General">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:titleTextAppearance="@style/Toolbar.TitleText"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        style="@style/Album.MatchParent"
+        android:layout_below="@+id/app_bar_layout"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_message"
+            style="@style/Album.WrapContent"
+            android:textColor="@color/albumFontHint" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_camera_image"
+            style="@style/Album.Button.WrapContent"
+            android:layout_marginTop="@dimen/album_dp_15"
+            android:drawableLeft="@drawable/album_ic_image_camera_white"
+            android:drawablePadding="@dimen/album_dp_6"
+            android:drawableStart="@drawable/album_ic_image_camera_white"
+            android:gravity="center"
+            android:text="@string/album_camera_image_capture"
+            android:textColor="@color/app_text_dark" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_camera_video"
+            style="@style/Album.Button.WrapContent"
+            android:layout_marginTop="@dimen/album_dp_15"
+            android:drawableLeft="@drawable/album_ic_video_camera_white"
+            android:drawablePadding="@dimen/album_dp_6"
+            android:drawableStart="@drawable/album_ic_video_camera_white"
+            android:gravity="center"
+            android:text="@string/album_camera_video_capture"
+            android:textColor="@color/app_text_dark" />
+
+    </LinearLayout>
+</RelativeLayout>

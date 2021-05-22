@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppThemeConcise" parent="@style/BaseAppTheme">
+        <item name="colorPrimary">@color/concise</item>
+        <item name="colorAccent">@color/concise_dark</item>
+        <item name="colorPrimaryDark">@color/concise_dark</item>
+        <item name="colorPrimaryTranslucent">@color/concise_translucent</item>
+        <item name="colorPrimaryDarkTranslucent">@color/concise_dark_translucent</item>
+        <item name="android:scrollbarThumbVertical">@color/concise_dark</item>
+    </style>
+
+    <style name="AppThemeBlue" parent="@style/BaseAppTheme">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorAccent">@color/blue_dark</item>
+        <item name="colorPrimaryDark">@color/blue_dark</item>
+        <item name="colorPrimaryTranslucent">@color/blue_translucent</item>
+        <item name="colorPrimaryDarkTranslucent">@color/blue_dark_translucent</item>
+        <item name="android:scrollbarThumbVertical">@color/blue_dark</item>
+    </style>
+
+    <style name="AppThemeGreen" parent="@style/BaseAppTheme">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorAccent">@color/green_dark</item>
+        <item name="colorPrimaryDark">@color/green_dark</item>
+        <item name="colorPrimaryTranslucent">@color/green_translucent</item>
+        <item name="colorPrimaryDarkTranslucent">@color/green_dark_translucent</item>
+        <item name="android:scrollbarThumbVertical">@color/green_dark</item>
+    </style>
+
+    <style name="AppThemeRed" parent="@style/BaseAppTheme">
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorAccent">@color/pink_dark</item>
+        <item name="colorPrimaryDark">@color/pink_dark</item>
+        <item name="colorPrimaryTranslucent">@color/pink_translucent</item>
+        <item name="colorPrimaryDarkTranslucent">@color/pink_dark_translucent</item>
+        <item name="android:scrollbarThumbVertical">@color/pink_dark</item>
+    </style>
+
+
+</resources>

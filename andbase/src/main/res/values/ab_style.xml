@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!-- ActionBar的颜色 -->
+        <item name="colorPrimary">@color/concise</item>
+
+        <!-- 随主题而改变的颜色（如CheckBox的颜色） -->
+        <item name="colorAccent">@color/concise_dark</item>
+
+        <!-- 状态栏的颜色 -->
+        <item name="colorPrimaryDark">@color/concise</item>
+
+        <!-- 状态栏透明  -->
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- 状态栏文字的颜色  -->
+        <item name="android:textColorPrimary">@color/app_text_dark</item>
+
+        <!-- 导航栏颜色  底部的虚拟按键  -->
+        <item name="android:navigationBarColor">@color/concise</item>
+
+        <!-- Menu文字的颜色  -->
+        <item name="actionMenuTextColor">@color/app_text_dark</item>
+
+        <!-- 默认返回的颜色  -->
+        <item name="colorControlNormal">@color/app_text_dark</item>
+
+        <!--  为了复制粘贴栏 的背景不能是白色 -->
+        <item name="actionBarPopupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="actionBarWidgetTheme">@null</item>
+        <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+
+        <item name="android:scrollbarSize">3dip</item>
+        <item name="android:scrollbarStyle">insideOverlay</item>
+        <item name="android:scrollbarThumbVertical">@color/concise</item>
+        <item name="android:scrollbarTrackVertical">@color/concise_light</item>
+
+    </style>
+
+    <style name="activity_anim" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_right</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Toolbar.TitleText.White" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="actionMenuTextAppearance">@style/Toolbar.TitleText</item>
+    </style>
+
+    <style name="ToolbarImageBtn">
+        <item name="android:layout_width">35dip</item>
+        <item name="android:layout_height">35dip</item>
+        <item name="android:layout_margin">8dip</item>
+        <item name="android:padding">8dip</item>
+        <item name="android:background">@drawable/bg_action_button</item>
+    </style>
+
+    <style name="PopupTheme"  parent="ThemeOverlay.AppCompat.Light">
+    </style>
+
+    <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="Dialog.Loading" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_clock_wall"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/analog_clock_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.andbase.library.view.sample.AbAnalogClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:dialDrawable="@drawable/ic_clock_dial"
+            app:hourDrawable="@drawable/ic_clock_hour"
+            app:minuteDrawable="@drawable/ic_clock_minute"
+            app:secondDrawable="@drawable/ic_clock_second">
+
+        </com.andbase.library.view.sample.AbAnalogClock>
+
+        <Button
+            android:id="@+id/close_button"
+            android:layout_width="100dip"
+            android:layout_height="30dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dip"
+            android:background="@drawable/button_bg_radius_storke"
+            android:textColor="@color/app_text_dark"
+            android:text="关闭"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
