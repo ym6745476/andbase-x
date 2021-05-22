@@ -13,11 +13,11 @@
 rootProject.name = 'xxxx-android'
 include ':andbase',':qrcode',':app',':album',':ucrop',':player'
 
-project(':andbase').projectDir = new File('../../../project/andbasex/andbase')
-project(':qrcode').projectDir = new File('../../../project/andbasex/qrcode')
-project(':album').projectDir = new File('../../../project/andbasex/album')
-project(':ucrop').projectDir = new File('../../../project/andbasex/ucrop')
-project(':player').projectDir = new File('../../../project/andbasex/player')
+project(':andbase').projectDir = new File('../../../project/andbase-x/andbase')
+project(':qrcode').projectDir = new File('../../../project/andbase-x/qrcode')
+project(':album').projectDir = new File('../../../project/andbase-x/album')
+project(':ucrop').projectDir = new File('../../../project/andbase-x/ucrop')
+project(':player').projectDir = new File('../../../project/andbase-x/player')
 
 ```
 
