@@ -19,13 +19,13 @@ import java.util.Locale;
 public class AbLogUtil {
 
     /** debug开关. */
-	public static boolean D = true;
+	public static boolean D = false;
 
 	/** info开关. */
-	public static boolean I = true;
+	public static boolean I = false;
 
 	/** error开关. */
-	public static boolean E = true;
+	public static boolean E = false;
 	
 	/** 起始执行时间. */
 	public static long startLogTimeInMillis = 0;

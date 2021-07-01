@@ -100,7 +100,7 @@ public class AbBaseFragment extends Fragment {
      * @param layoutResID  布局ID
      */
     public View showPageView(View rootView,@LayoutRes int layoutResID) {
-        View pageView = View.inflate(activity,layoutResID,null);
+        View pageView = View.inflate(rootView.getContext(),layoutResID,null);
         ((ViewGroup)rootView).addView(pageView,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
         return pageView;
     }

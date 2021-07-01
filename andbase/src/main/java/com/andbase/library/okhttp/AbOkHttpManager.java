@@ -153,17 +153,20 @@ public class AbOkHttpManager {
         this.context = context;
         this.cacheType = cacheType;
         this.headerMap = new HashMap<String,String>();
-
-        File cacheDir = new File(AbFileUtil.getCacheDownloadDir(context));
-        this.cache = new Cache(cacheDir, maxCacheSize);
-        if(cacheType == CACHAE_TYPE_DEFAULT){
-            this.httpClient = AbOkHttpClient.getNoSSLTrustOkHttpClient().cache(cache).addInterceptor(interceptorDefault).addNetworkInterceptor(interceptorDefault).build();
-        }else if(cacheType == CACHAE_TYPE_OPTIMIZE){
-            this.httpClient = AbOkHttpClient.getNoSSLTrustOkHttpClient().cache(cache).addInterceptor(interceptorOptimize).addNetworkInterceptor(interceptorOptimize).build();
+        String cacheDirPath = AbFileUtil.getCacheDownloadDir(context);
+        if(!AbStrUtil.isEmpty(cacheDirPath)){
+            File cacheDir = new File(cacheDirPath);
+            this.cache = new Cache(cacheDir, maxCacheSize);
+            if(cacheType == CACHAE_TYPE_DEFAULT){
+                this.httpClient = AbOkHttpClient.getNoSSLTrustOkHttpClient().cache(cache).addInterceptor(interceptorDefault).addNetworkInterceptor(interceptorDefault).build();
+            }else if(cacheType == CACHAE_TYPE_OPTIMIZE){
+                this.httpClient = AbOkHttpClient.getNoSSLTrustOkHttpClient().cache(cache).addInterceptor(interceptorOptimize).addNetworkInterceptor(interceptorOptimize).build();
+            }else{
+                this.httpClient = AbOkHttpClient.getNoSSLTrustOkHttpClient().build();
+            }
         }else{
             this.httpClient = AbOkHttpClient.getNoSSLTrustOkHttpClient().build();
         }
-
     }
 
     public <T>void get(String url, AbOkHttpResponseListener<T> responseListener) {
