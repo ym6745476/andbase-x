@@ -204,6 +204,15 @@ public class AbIndicatorViewPager extends LinearLayout {
 
 	/**
 	 * 添加View.
+	 * @param index the index
+	 * @param view the view
+	 */
+	public void addItemView(int index,View view){
+		viewList.add(index,view);
+	}
+
+	/**
+	 * 添加View.
 	 * @param view the view
 	 */
 	public void addItemView(View view,boolean notify){
@@ -212,6 +221,16 @@ public class AbIndicatorViewPager extends LinearLayout {
 			notifyDataSetChanged();
 		}
 
+	}
+
+	/**
+	 * 删除View
+	 */
+	public void removeItemView(View view){
+		if(viewPagerAdapter!=null){
+			viewList.remove(view);
+			notifyDataSetChanged();
+		}
 	}
 
 	/**

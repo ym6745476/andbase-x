@@ -96,6 +96,15 @@ public class AbMathUtil {
         return df.format(number);
     }
 
+    /**
+     * 每3位加逗号
+     * @param number
+     * @return
+     */
+    public static String format3NumberTwo(double number) {
+        DecimalFormat df = new DecimalFormat("#,###.00");
+        return df.format(number);
+    }
 
     /**
      * 字节数组转换成16进制串.
