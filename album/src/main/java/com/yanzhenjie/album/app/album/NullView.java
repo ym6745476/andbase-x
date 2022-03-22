@@ -56,7 +56,7 @@ class NullView extends Contract.NullView implements View.OnClickListener {
         mToolbar.setBackgroundColor(widget.getToolBarColor());
 
         int statusBarColor = widget.getStatusBarColor();
-        Drawable navigationIcon = getDrawable(R.drawable.ic_action_back_black);
+        Drawable navigationIcon = getDrawable(com.andbase.library.R.drawable.ic_action_back_black);
         if (widget.getUiStyle() == Widget.STYLE_LIGHT) {
 
 

@@ -213,7 +213,7 @@ public class AbOkHttpManager {
     public <T> void  request(final String url, final String method, final AbOkRequestParams params, final AbOkHttpResponseListener<T> responseListener){
         //请求开始
         responseListener.onStart();
-
+        AbLogUtil.i(TAG, "[request]:" + url + "\n");
         Observable.create(new ObservableOnSubscribe<Response>() {
 
             @Override
@@ -309,6 +309,9 @@ public class AbOkHttpManager {
                             }else{
                                 throw new ConnectException("Connect Failed");
                             }
+
+                            response.body().close();
+
                         }
                     }
                 }catch (Exception e){
@@ -376,7 +379,7 @@ public class AbOkHttpManager {
             @Override
             public void onError(Throwable e) {
                 AbLogUtil.i(TAG, "[onError]" + e.getMessage());
-                responseListener.onError(500,"服务连接失败!",null);
+                responseListener.onError(500,"服务连接失败!",new ConnectException());
                 responseListener.onComplete();
 
             }
@@ -402,8 +405,8 @@ public class AbOkHttpManager {
                 }
             }
 
-            if(method == HTTP_GET){
-                if(params!=null && params.size()[0] > 0){
+            if(method.equals(HTTP_GET)){
+                if(params.size()[0] > 0){
 
                     if(params.getUrlParams().size() > 0  && url.indexOf("?")==-1){
                         url += "?";

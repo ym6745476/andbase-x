@@ -60,7 +60,28 @@ public class AbDialogUtil {
 		}
         return dialogFragment;
     }
-	
+
+	/**
+	 * 显示一个面板
+	 * @param view
+	 * @return
+	 */
+	public static AbDialogFragment showPanel(View view) {
+		AbDialogFragment dialogFragment = null;
+		try{
+			FragmentActivity activity = (FragmentActivity)view.getContext();
+			dialogFragment = AbDialogFragment.newInstance(DialogFragment.STYLE_NORMAL,android.R.style.Theme_Panel,Gravity.TOP);
+			dialogFragment.setContentView(view);
+			FragmentTransaction ft = activity.getFragmentManager().beginTransaction();
+			// 指定一个系统转场动画
+			ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+			dialogFragment.show(ft, dialogTag);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return dialogFragment;
+	}
+
 	/**
 	 * 显示一个居中的对话框.
 	 * @param view

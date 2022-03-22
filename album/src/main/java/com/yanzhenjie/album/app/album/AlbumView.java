@@ -100,14 +100,14 @@ class AlbumView extends Contract.AlbumView implements View.OnClickListener {
 
             mProgressBar.setColorFilter(getColor(R.color.albumLoadingDark));
 
-            Drawable navigationIcon = getDrawable(R.drawable.ic_action_back_black);
+            Drawable navigationIcon = getDrawable(com.andbase.library.R.drawable.ic_action_back_black);
             setHomeAsUpIndicator(navigationIcon);
 
             Drawable completeIcon = mCompleteMenu.getIcon();
             mCompleteMenu.setIcon(completeIcon);
         } else {
             mProgressBar.setColorFilter(widget.getToolBarColor());
-            setHomeAsUpIndicator(R.drawable.ic_action_back_black);
+            setHomeAsUpIndicator(com.andbase.library.R.drawable.ic_action_back_black);
         }
         mToolbar.setBackgroundColor(widget.getToolBarColor());
 

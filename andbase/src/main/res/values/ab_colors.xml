@@ -2,6 +2,7 @@
 <resources>
 
     <color name="transparent">#00000000</color>
+
     <color name="white">#FFFFFF</color>
     <color name="white_translucent">#20FFFFFF</color>
     <color name="white_dark_translucent">#60EEEEEE</color>
@@ -107,8 +108,8 @@
     <color name="app_line_dark">#BDBDBD</color>
 
     <color name="app_text_black">#333333</color>
-    <color name="app_text_dark">#666666</color>
     <color name="app_text_light">#999999</color>
+    <color name="app_text_dark">#666666</color>
 
     <color name="app_tag_blue">#2AB4FB</color>
     <color name="app_tag_green">#19be6b</color>

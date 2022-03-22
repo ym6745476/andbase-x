@@ -31,7 +31,6 @@ import androidx.core.view.NestedScrollingParentHelper;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.ListViewCompat;
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  *  已经按照最新的Android X 修改
@@ -653,11 +652,7 @@ public class AbPullToRefreshView extends ViewGroup implements NestedScrollingPar
         return mTarget.canScrollVertically(-1);
     }
 
-    /**
-     * Set a callback to override {@link SwipeRefreshLayout#canChildScrollUp()} method. Non-null
-     * callback will return the value provided by the callback and ignore all internal logic.
-     * @param callback Callback that should be called when canChildScrollUp() is called.
-     */
+
     public void setOnChildScrollUpCallback(@Nullable OnChildScrollUpCallback callback) {
         mChildScrollUpCallback = callback;
     }
@@ -1191,20 +1186,9 @@ public class AbPullToRefreshView extends ViewGroup implements NestedScrollingPar
         void onRefresh();
     }
 
-    /**
-     * Classes that wish to override {@link SwipeRefreshLayout#canChildScrollUp()} method
-     * behavior should implement this interface.
-     */
+
     public interface OnChildScrollUpCallback {
-        /**
-         * Callback that will be called when {@link SwipeRefreshLayout#canChildScrollUp()} method
-         * is called to allow the implementer to override its behavior.
-         *
-         * @param parent SwipeRefreshLayout that this callback is overriding.
-         * @param child The child view of SwipeRefreshLayout.
-         *
-         * @return Whether it is possible for the child view of parent layout to scroll up.
-         */
+
         boolean canChildScrollUp(@NonNull AbPullToRefreshView parent, @Nullable View child);
     }
 

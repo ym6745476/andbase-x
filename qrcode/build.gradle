@@ -36,11 +36,6 @@ android {
         }
     }
 
-    repositories {
-        flatDir {
-            dir 'libs'
-        }
-    }
 }
 
 dependencies {

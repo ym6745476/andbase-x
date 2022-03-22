@@ -6,7 +6,7 @@
         <solid android:color="@color/app_bg_dark" />
         <corners android:radius="0dip" />
         <stroke
-            android:width="1dip"
+            android:width="0dip"
             android:color="@color/app_bg_dark" />
     </shape>
 </item>
@@ -16,7 +16,7 @@
         <solid android:color="@color/app_bg_dark" />
         <corners android:radius="0dip" />
         <stroke
-            android:width="1dip"
+            android:width="0dip"
             android:color="@color/app_bg_dark" />
     </shape>
 </item>
@@ -26,7 +26,7 @@
         <solid android:color="@color/transparent" />
         <corners android:radius="0dip" />
         <stroke
-            android:width="1dip"
+            android:width="0dip"
             android:color="@color/transparent" />
     </shape>
 </item>

@@ -26,15 +26,15 @@ public class AbSpaceItemVerticalDecoration extends RecyclerView.ItemDecoration {
     private int topBottomPadding = -1;
     private Paint paint;
 
-    public AbSpaceItemVerticalDecoration(Context context, int space) {
+    public AbSpaceItemVerticalDecoration(Context context, int space,int spaceColor) {
         this.context = context;
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         if(space == 1){
             this.space = 1;
-            paint.setColor(Color.parseColor("#EAEAEA"));
+            paint.setColor(spaceColor);
         }else if(space > 0){
             this.space = (int) AbViewUtil.dip2px(context,space);
-            paint.setColor(Color.parseColor("#FAFAFA"));
+            paint.setColor(spaceColor);
         }
         paint.setStyle(Paint.Style.FILL);
 

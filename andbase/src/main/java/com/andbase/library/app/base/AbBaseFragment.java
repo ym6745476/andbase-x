@@ -24,7 +24,6 @@ import com.andbase.library.utils.AbLogUtil;
  */
 public class AbBaseFragment extends Fragment {
 
-    public AbBaseActivity activity;
     public View rootView = null;
 
     public AbBaseFragment() {
@@ -40,7 +39,6 @@ public class AbBaseFragment extends Fragment {
 
     @Override
     public void onAttach(Context context) {
-        this.activity = (AbBaseActivity)context;
         AbLogUtil.d(this.getClass(),"------------------onAttach-----------------------");
         super.onAttach(context);
     }
@@ -48,7 +46,6 @@ public class AbBaseFragment extends Fragment {
     @Override
     public void onDetach() {
         AbLogUtil.d(this.getClass(),"------------------onDetach-----------------------");
-        this.activity = null;
         super.onDetach();
     }
 

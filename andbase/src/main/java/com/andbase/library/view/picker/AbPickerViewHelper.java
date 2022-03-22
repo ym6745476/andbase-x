@@ -60,7 +60,7 @@ public class AbPickerViewHelper {
 
         //设置"年"的显示数据
         final List<String> yearList = new ArrayList<String>();
-        for(int i= minYear;i< maxYear;i++){
+        for(int i= minYear;i<= maxYear;i++){
             yearList.add(i + "年");
         }
         pickerViewY.setItems(yearList);
@@ -99,8 +99,11 @@ public class AbPickerViewHelper {
                 }
             }
         }
-        pickerViewD.setItems(dayList);
-        pickerViewD.setInitPosition(defaultDay-1);
+        if(pickerViewD!=null){
+            pickerViewD.setItems(dayList);
+            pickerViewD.setInitPosition(defaultDay-1);
+        }
+
 
         // 添加"年"监听
         pickerViewY.setListener(new AbOnItemSelectedListener() {
@@ -116,10 +119,13 @@ public class AbPickerViewHelper {
         pickerViewM.setListener(new AbOnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                String year = yearList.get(index).replace("年","");
+                String year = pickerViewY.getItems().get(pickerViewY.getSelectedItem()).getValue().replace("年","");
                 String month = pickerViewM.getItems().get(pickerViewM.getSelectedItem()).getValue().replace("月","");
 
-                updateDayItems(year,month,pickerViewD);
+                if(pickerViewD!=null){
+                    updateDayItems(year,month,pickerViewD);
+                }
+
             }
         });
 
@@ -155,8 +161,11 @@ public class AbPickerViewHelper {
                 }
             }
         }
-        pickerViewD.setItems(dayList);
-        pickerViewD.invalidate();
+        if(pickerViewD!=null){
+            pickerViewD.setItems(dayList);
+            pickerViewD.invalidate();
+        }
+
     }
 
     /**

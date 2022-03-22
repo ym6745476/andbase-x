@@ -81,7 +81,7 @@ public class GalleryView<Data> extends Contract.GalleryView<Data> implements Vie
     @Override
     public void setupViews(Widget widget, boolean checkable) {
 
-        setHomeAsUpIndicator(R.drawable.ic_action_back_white);
+        setHomeAsUpIndicator(com.andbase.library.R.drawable.ic_action_back_white);
         if (!checkable) {
             mCompleteMenu.setVisible(false);
             mCheckBox.setVisibility(View.GONE);

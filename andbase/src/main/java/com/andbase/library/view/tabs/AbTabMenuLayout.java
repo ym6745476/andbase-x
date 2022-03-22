@@ -79,6 +79,10 @@ public class AbTabMenuLayout extends LinearLayout {
 
     }
 
+    public int getCurrentIndex() {
+        return mCurrentItem;
+    }
+
     private void isInit() {
         if (!ISINIT) {
             init();
