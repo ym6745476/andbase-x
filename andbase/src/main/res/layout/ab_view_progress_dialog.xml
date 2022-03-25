@@ -19,14 +19,6 @@
             android:orientation="horizontal"
             android:padding="10dip">
 
-            <com.andbase.library.view.imageview.AbCircleImageView
-                android:id="@+id/dialog_icon"
-                app:border_color="@android:color/white"
-                app:border_width="1dp"
-                android:layout_width="25dip"
-                android:layout_height="24dip"
-                android:src="?attr/colorAccent" />
-
             <TextView
                 android:id="@+id/dialog_title"
                 android:layout_width="match_parent"

@@ -22,17 +22,6 @@
         <attr name="leftSwipe" format="boolean"/>
     </declare-styleable>
 
-    <declare-styleable name="AbCircleImageView">
-        <attr name="border_width" format="dimension" />
-        <attr name="border_color" format="color" />
-        <attr name="border_overlay" format="boolean" />
-        <attr name="fill_color" format="color" />
-    </declare-styleable>
-
-    <declare-styleable name="AbAspectRatioImageView">
-        <attr name="width_ratio" format="integer"/>
-        <attr name="height_ratio" format="integer"/>
-    </declare-styleable>
 
     <declare-styleable name="AbSwitchButton">
         <attr name="thumbDrawable" format="reference"/>
@@ -116,10 +105,6 @@
         <attr name="inner_corner_length" format="dimension" />
         <attr name="inner_corner_width" format="dimension" />
         <attr name="inner_scan_bitmap" format="reference" />
-    </declare-styleable>
-
-    <declare-styleable name="AbRoundImageView">
-        <attr name="radius" format="integer"/>
     </declare-styleable>
 
     <declare-styleable name="AbCalendarView">

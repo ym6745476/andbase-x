@@ -21,7 +21,6 @@ import android.widget.TextView;
 
 import com.andbase.library.R;
 import com.andbase.library.view.dialog.AbDialogFragment;
-import com.andbase.library.view.imageview.AbSuitableImageView;
 import com.bumptech.glide.Glide;
 
 
@@ -256,44 +255,6 @@ public class AbDialogUtil {
 
 		return AbDialogUtil.showDialog(view);
 
-	}
-
-	public static AbDialogFragment showBeautyDialog(final Context context, String htmlMessage){
-		View view = View.inflate(context,R.layout.ab_view_beauty_dialog, null);
-		AbDialogFragment fragment = AbDialogUtil.showDialog(view);
-		fragment.setCancelable(false);
-		TextView textView = (TextView)view.findViewById(R.id.dialog_message);
-		textView.setText(Html.fromHtml(htmlMessage));
-		AbSuitableImageView imageView = (AbSuitableImageView)view.findViewById(R.id.dialog_image);
-		imageView.setVisibility(View.GONE);
-		Button closeButton = (Button)view.findViewById(R.id.dialog_close_button);
-		closeButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				AbDialogUtil.removeDialog(context);
-			}
-		});
-
-		return fragment;
-
-	}
-
-	public static AbDialogFragment showBeautyDialog(final Context context, String message, int imageResId){
-		View view = View.inflate(context,R.layout.ab_view_beauty_dialog, null);
-		AbDialogFragment fragment = AbDialogUtil.showDialog(view);
-		fragment.setCancelable(false);
-		TextView textView = (TextView)view.findViewById(R.id.dialog_message);
-		textView.setText(message);
-		AbSuitableImageView imageView = (AbSuitableImageView)view.findViewById(R.id.dialog_image);
-		imageView.setImageResource(imageResId);
-		Button closeButton = (Button)view.findViewById(R.id.dialog_close_button);
-		closeButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				AbDialogUtil.removeDialog(context);
-			}
-		});
-		return fragment;
 	}
 
 	/**
