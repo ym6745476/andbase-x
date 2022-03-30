@@ -1,6 +1,7 @@
 package com.andbase.library.view.picker;
 
 import com.andbase.library.utils.AbDateUtil;
+import com.andbase.library.utils.AbStrUtil;
 import com.andbase.library.view.listener.AbOnItemSelectedListener;
 
 import java.util.ArrayList;
@@ -271,11 +272,11 @@ public class AbPickerViewHelper {
      * @param mWheelViewHH the m wheel view hh
      * @param pickerViewMM  选择分的轮子
      */
-    public static void initPickerValueHM(final AbPickerView mWheelViewHH, final AbPickerView pickerViewMM) {
+    public static void initPickerValueHM(final AbPickerView mWheelViewHH, final AbPickerView pickerViewMM,String hourLabel,String minuteLabel) {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
-        initWheelPickerHM(mWheelViewHH,pickerViewMM,hour,minute);
+        initWheelPickerHM(mWheelViewHH,pickerViewMM,hour,minute,hourLabel,minuteLabel);
     }
 
     /**
@@ -287,24 +288,24 @@ public class AbPickerViewHelper {
      * @param defaultMinute the default minute
      */
     public static void initWheelPickerHM(final AbPickerView pickerViewHH, final AbPickerView pickerViewMM,
-                                         int defaultHour, int defaultMinute){
+                                         int defaultHour, int defaultMinute,String hourLabel,String minuteLabel){
 
         // 时
         final List<String> textHHList = new ArrayList<String>();
         for(int i=0;i<24;i++){
-            textHHList.add(i+"点");
+            textHHList.add(AbStrUtil.strFormat2(String.valueOf(i)) + hourLabel);
         }
 
-        String currentHH = defaultHour+"点";
+        String currentHH = defaultHour + hourLabel;
         int currentHourIndex = textHHList.indexOf(currentHH);
         pickerViewHH.setItems(textHHList);
         pickerViewHH.setInitPosition(currentHourIndex);
         // 分
         final List<String> textMMList = new ArrayList<String>();
         for(int i=0;i<60;i++){
-            textMMList.add(i+"分");
+            textMMList.add(AbStrUtil.strFormat2(String.valueOf(i)) + minuteLabel);
         }
-        String currentMM = defaultMinute+"分";
+        String currentMM = defaultMinute + minuteLabel;
         int currentMinuteIndex = textMMList.indexOf(currentMM);
         pickerViewMM.setItems(textMMList);
         pickerViewMM.setInitPosition(currentMinuteIndex);

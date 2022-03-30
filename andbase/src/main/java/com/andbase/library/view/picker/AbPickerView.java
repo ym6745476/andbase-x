@@ -154,7 +154,7 @@ public class AbPickerView extends View {
         lineSpacingMultiplier = typedArray.getFloat(R.styleable.AbPickerView_lineSpace, DEFAULT_LINE_SPACE);
         centerTextColor = typedArray.getInteger(R.styleable.AbPickerView_centerTextColor, 0xff313131);
         outerTextColor = typedArray.getInteger(R.styleable.AbPickerView_outerTextColor, 0xffafafaf);
-        dividerColor = typedArray.getInteger(R.styleable.AbPickerView_dividerTextColor, 0xffc5c5c5);
+        dividerColor = typedArray.getInteger(R.styleable.AbPickerView_dividerTextColor, 0xffF1F1F1);
         itemsVisibleCount =
             typedArray.getInteger(R.styleable.AbPickerView_itemsVisibleCount, DEFAULT_VISIBIE_ITEMS);
         if (itemsVisibleCount % 2 == 0) {
