@@ -226,36 +226,36 @@ public class AbDialogUtil {
 		return fragment;
 	}
 
-	public static AbDialogFragment showListDialog(final Context context,String[] list,int defaultPosition,final AdapterView.OnItemClickListener onItemClickListener){
-		View view = View.inflate(context, R.layout.ab_view_list_dialog,null);
-		final ListView listView = (ListView)view.findViewById(R.id.list);
-		listView.setAdapter(new ArrayAdapter<String>(context,R.layout.ab_view_list_item_checked, list));
-
-
-		listView.setItemChecked(defaultPosition,true);
-
-		Button buttonOk = (Button)view.findViewById(R.id.dialog_button2);
-		Button buttonCancel = (Button)view.findViewById(R.id.dialog_button1);
-
-		buttonOk.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				int position = listView .getCheckedItemPosition();
-				onItemClickListener.onItemClick(null,v,position,position);
-				AbDialogUtil.removeDialog(context);
-
-			}
-		});
-		buttonCancel.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				AbDialogUtil.removeDialog(context);
-			}
-		});
-
-		return AbDialogUtil.showDialog(view);
-
-	}
+//	public static AbDialogFragment showListDialog(final Context context,String[] list,int defaultPosition,final AdapterView.OnItemClickListener onItemClickListener){
+//		View view = View.inflate(context, R.layout.ab_view_list_dialog,null);
+//		final ListView listView = (ListView)view.findViewById(R.id.list);
+//		listView.setAdapter(new ArrayAdapter<String>(context,R.layout.ab_view_list_item_checked, list));
+//
+//
+//		listView.setItemChecked(defaultPosition,true);
+//
+//		Button buttonOk = (Button)view.findViewById(R.id.dialog_button2);
+//		Button buttonCancel = (Button)view.findViewById(R.id.dialog_button1);
+//
+//		buttonOk.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				int position = listView .getCheckedItemPosition();
+//				onItemClickListener.onItemClick(null,v,position,position);
+//				AbDialogUtil.removeDialog(context);
+//
+//			}
+//		});
+//		buttonCancel.setOnClickListener(new View.OnClickListener() {
+//			@Override
+//			public void onClick(View v) {
+//				AbDialogUtil.removeDialog(context);
+//			}
+//		});
+//
+//		return AbDialogUtil.showDialog(view);
+//
+//	}
 
 	/**
 	 * 移除Fragment.
