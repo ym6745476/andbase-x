@@ -10,6 +10,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.andbase.library.R;
@@ -275,4 +276,7 @@ public class AbIndicatorView extends View {
         invalidate();
     }
 
+    public void setUnitDrawable(StateListDrawable unitDrawable) {
+        this.unitDrawable = unitDrawable;
+    }
 }

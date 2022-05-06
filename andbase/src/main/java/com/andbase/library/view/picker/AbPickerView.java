@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Handler;
+import android.os.Message;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -50,6 +51,8 @@ public class AbPickerView extends View {
     private Paint paintCenterText;
     private Paint paintIndicator;
 
+    int initPosition;
+    private int currentIndex;
     List<IndexString> items;
 
     int textSize;
@@ -67,8 +70,7 @@ public class AbPickerView extends View {
     int secondLineY;
 
     int totalScrollY;
-    int initPosition;
-    private int selectedItem;
+
     int preCurrentIndex;
     int change;
 
@@ -145,7 +147,13 @@ public class AbPickerView extends View {
     private void initLoopView(Context context, AttributeSet attributeset) {
         this.context = context;
         handler = new AbPickerMessageHandler(this);
-        flingGestureDetector = new GestureDetector(context, new AbPickerGestureListener(this));
+        flingGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener(){
+            @Override
+            public final boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+                scrollBy(velocityY);
+                return true;
+            }
+        });
         flingGestureDetector.setIsLongpressEnabled(false);
 
         TypedArray typedArray = context.obtainStyledAttributes(attributeset, R.styleable.AbPickerView);
@@ -311,20 +319,33 @@ public class AbPickerView extends View {
     }
 
     public List<IndexString> convertData(List<String> items){
-        List<IndexString> data=new ArrayList<>();
+        List<IndexString> data = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
             data.add(new IndexString(i,items.get(i)));
         }
         return data;
     }
 
-    public final int getSelectedItem() {
-        return selectedItem;
+    public final int getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public final String getCurrentValue() {
+        return items.get(currentIndex).getValue();
+    }
+
+    public List<IndexString> getItems() {
+        return items;
     }
 
     protected final void onItemSelected() {
         if (onItemSelectedListener != null) {
-            postDelayed(new AbPickerOnItemSelectedRunnable(this), 200L);
+            postDelayed(new Runnable(){
+                @Override
+                public final void run() {
+                    onItemSelectedListener.onItemSelected(currentIndex);
+                }
+            }, 200L);
         }
     }
 
@@ -339,7 +360,7 @@ public class AbPickerView extends View {
             return;
         }
         int size = items.size();
-        if (position >= 0 && position < size && position != selectedItem) {
+        if (position >= 0 && position < size && position != currentIndex) {
             initPosition = position;
             totalScrollY = 0;
             mOffset = 0;
@@ -436,7 +457,7 @@ public class AbPickerView extends View {
                     canvas.clipRect(0, 0, measuredWidth, (int) (itemHeight));
                     canvas.drawText(drawingStrings.get(i).getValue(), getTextX(drawingStrings.get(i).getValue(), paintCenterText, tempRect),
                         maxTextHeight, paintCenterText);
-                    selectedItem = items.indexOf(drawingStrings.get(i));
+                    currentIndex = items.indexOf(drawingStrings.get(i));
                 } else {
                     // other item
                     canvas.clipRect(0, 0, measuredWidth, (int) (itemHeight));
@@ -527,6 +548,9 @@ public class AbPickerView extends View {
         return true;
     }
 
+
+
+
     public class IndexString {
 
         private String value;
@@ -558,7 +582,126 @@ public class AbPickerView extends View {
         }
     }
 
-    public List<IndexString> getItems() {
-        return items;
+    final class AbPickerSmoothScrollTimerTask implements Runnable {
+
+        int realTotalOffset;
+        int realOffset;
+        int offset;
+        final AbPickerView loopView;
+
+        AbPickerSmoothScrollTimerTask(AbPickerView loopview, int offset) {
+            this.loopView = loopview;
+            this.offset = offset;
+            realTotalOffset = Integer.MAX_VALUE;
+            realOffset = 0;
+        }
+
+        @Override
+        public final void run() {
+            if (realTotalOffset == Integer.MAX_VALUE) {
+                realTotalOffset = offset;
+            }
+            realOffset = (int) ((float) realTotalOffset * 0.1F);
+
+            if (realOffset == 0) {
+                if (realTotalOffset < 0) {
+                    realOffset = -1;
+                } else {
+                    realOffset = 1;
+                }
+            }
+            if (Math.abs(realTotalOffset) <= 0) {
+                loopView.cancelFuture();
+                loopView.handler.sendEmptyMessage(AbPickerMessageHandler.WHAT_ITEM_SELECTED);
+            } else {
+                loopView.totalScrollY = loopView.totalScrollY + realOffset;
+                loopView.handler.sendEmptyMessage(AbPickerMessageHandler.WHAT_INVALIDATE_LOOP_VIEW);
+                realTotalOffset = realTotalOffset - realOffset;
+            }
+        }
     }
+
+    final class AbPickerMessageHandler extends Handler {
+        public static final int WHAT_INVALIDATE_LOOP_VIEW = 1000;
+        public static final int WHAT_SMOOTH_SCROLL = 2000;
+        public static final int WHAT_ITEM_SELECTED = 3000;
+
+        final AbPickerView loopview;
+
+        AbPickerMessageHandler(AbPickerView loopview) {
+            this.loopview = loopview;
+        }
+
+        @Override
+        public final void handleMessage(Message msg) {
+            switch (msg.what) {
+                case WHAT_INVALIDATE_LOOP_VIEW:
+                    loopview.invalidate();
+                    break;
+
+                case WHAT_SMOOTH_SCROLL:
+                    loopview.smoothScroll(AbPickerView.ACTION.FLING);
+                    break;
+
+                case WHAT_ITEM_SELECTED:
+                    loopview.onItemSelected();
+                    break;
+            }
+        }
+
+    }
+
+    final class AbPickerInertiaTimerTask implements Runnable {
+
+        float a;
+        final float velocityY;
+        final AbPickerView loopView;
+
+        AbPickerInertiaTimerTask(AbPickerView loopview, float velocityY) {
+            super();
+            loopView = loopview;
+            this.velocityY = velocityY;
+            a = Integer.MAX_VALUE;
+        }
+
+        @Override
+        public final void run() {
+            if (a == Integer.MAX_VALUE) {
+                if (Math.abs(velocityY) > 2000F) {
+                    if (velocityY > 0.0F) {
+                        a = 2000F;
+                    } else {
+                        a = -2000F;
+                    }
+                } else {
+                    a = velocityY;
+                }
+            }
+            if (Math.abs(a) >= 0.0F && Math.abs(a) <= 20F) {
+                loopView.cancelFuture();
+                loopView.handler.sendEmptyMessage(AbPickerMessageHandler.WHAT_SMOOTH_SCROLL);
+                return;
+            }
+            int i = (int) ((a * 10F) / 1000F);
+            AbPickerView loopview = loopView;
+            loopview.totalScrollY = loopview.totalScrollY - i;
+            if (!loopView.isLoop) {
+                float itemHeight = loopView.lineSpacingMultiplier * loopView.maxTextHeight;
+                if (loopView.totalScrollY <= (int) ((float) (-loopView.initPosition) * itemHeight)) {
+                    a = 40F;
+                    loopView.totalScrollY = (int) ((float) (-loopView.initPosition) * itemHeight);
+                } else if (loopView.totalScrollY >= (int) ((float) (loopView.items.size() - 1 - loopView.initPosition) * itemHeight)) {
+                    loopView.totalScrollY = (int) ((float) (loopView.items.size() - 1 - loopView.initPosition) * itemHeight);
+                    a = -40F;
+                }
+            }
+            if (a < 0.0F) {
+                a = a + 20F;
+            } else {
+                a = a - 20F;
+            }
+            loopView.handler.sendEmptyMessage(AbPickerMessageHandler.WHAT_INVALIDATE_LOOP_VIEW);
+        }
+    }
+
 }

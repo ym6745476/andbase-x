@@ -14,6 +14,7 @@ public class AbTabMenuLayout extends LinearLayout {
 
     private ViewPager mViewPager;
     private OnTabChangedListner mListner;
+    private OnTabClickListener mTabClickListener;
     private List<AbTabMenuItemView> mTabViews;
     private boolean ISINIT;
     /**
@@ -51,6 +52,10 @@ public class AbTabMenuLayout extends LinearLayout {
     public void setOnTabChangedListner(OnTabChangedListner listner) {
         this.mListner = listner;
         isInit();
+    }
+
+    public void setOnTabClickListener(OnTabClickListener mTabClickListener) {
+        this.mTabClickListener = mTabClickListener;
     }
 
     public AbTabMenuItemView getCurrentItemView() {
@@ -150,6 +155,13 @@ public class AbTabMenuLayout extends LinearLayout {
 
         @Override
         public void onClick(View v) {
+
+            if(mTabClickListener!=null){
+               boolean result =  mTabClickListener.onTabClicked(currentIndex);
+               if(result){
+                   return;
+               }
+            }
             //点击前先重置所有按钮的状态
             resetState();
             mTabViews.get(currentIndex).setIconAlpha(1.0f);
@@ -212,5 +224,9 @@ public class AbTabMenuLayout extends LinearLayout {
 
     public interface OnTabChangedListner {
         void onTabSelected(int tabNum);
+    }
+
+    public interface OnTabClickListener {
+        boolean onTabClicked(int tabNum);
     }
 }

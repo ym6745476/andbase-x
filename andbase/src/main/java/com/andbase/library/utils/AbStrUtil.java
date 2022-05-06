@@ -156,23 +156,6 @@ public class AbStrUtil {
  	}
 
 	/**
-	 * 是否包含字母和数字.
-	 * @param str 指定的字符串
-	 * @return 是否只是字母和数字:是为true，否则false
-	 */
-	public static Boolean isNumberAndLetter(String str) {
-		if(isEmpty(str)){
-			return false;
-		}
-		Boolean isNoLetter = false;
-		String expr = "^[a-z0-9A-Z]+$";
-		if (str.matches(expr)) {
-			isNoLetter = true;
-		}
-		return isNoLetter;
-	}
-
-	/**
 	 * 是否包含字母和数字和中文.
 	 * @param str 指定的字符串
 	 * @return 是否只是字母和数字:是为true，否则false
@@ -457,21 +440,7 @@ public class AbStrUtil {
     	return Long.valueOf(items[0])<<24 |Long.valueOf(items[1])<<16 |Long.valueOf(items[2])<<8 |Long.valueOf(items[3]); 
     }
 
-	public static String formatStarName(String name) {
-		String newStr;
-		if (name.length() == 2) {
-			newStr = "*" + name.substring(1, 2);
-		} else if (name.length() == 3) {
-			newStr = name.substring(0, 1) + "*" + name.substring(2);
-		} else if (name.length() == 4) {
-			newStr = name.substring(0, 2) + "*" + name.substring(3);
-		}  else if (name.length() > 4) {
-			newStr = name.substring(0, 2) + "**" + name.substring(4);
-		} else {
-			newStr = name;
-		}
-		return newStr;
-	}
+
 	
     /**
      * The main method.

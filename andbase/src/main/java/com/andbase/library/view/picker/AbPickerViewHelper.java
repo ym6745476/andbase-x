@@ -111,7 +111,7 @@ public class AbPickerViewHelper {
             @Override
             public void onItemSelected(int index) {
                 String year = yearList.get(index).replace("年","");
-                String month = pickerViewM.getItems().get(pickerViewM.getSelectedItem()).getValue().replace("月","");
+                String month = pickerViewM.getCurrentValue().replace("月","");
                 updateDayItems(year,month,pickerViewD);
             }
         });
@@ -120,8 +120,8 @@ public class AbPickerViewHelper {
         pickerViewM.setListener(new AbOnItemSelectedListener() {
             @Override
             public void onItemSelected(int index) {
-                String year = pickerViewY.getItems().get(pickerViewY.getSelectedItem()).getValue().replace("年","");
-                String month = pickerViewM.getItems().get(pickerViewM.getSelectedItem()).getValue().replace("月","");
+                String year = pickerViewY.getCurrentValue().replace("年","");
+                String month = pickerViewM.getCurrentValue().replace("月","");
 
                 if(pickerViewD!=null){
                     updateDayItems(year,month,pickerViewD);
