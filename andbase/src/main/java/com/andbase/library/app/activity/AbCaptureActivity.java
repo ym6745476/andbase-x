@@ -36,6 +36,7 @@ import com.andbase.library.utils.AbAppUtil;
 import com.andbase.library.utils.AbImageUtil;
 import com.andbase.library.utils.AbToastUtil;
 
+
 import java.io.OutputStream;
 
 /**
@@ -151,7 +152,7 @@ public class AbCaptureActivity extends AbBaseActivity {
                     String  url = insertImage(AbCaptureActivity.this.getContentResolver(), cameraBitmap, "andbase", "andbase");
                     path = getRealFilePath(AbCaptureActivity.this,Uri.parse(url));
                     Log.e("onPictureTaken", "onPictureTaken insertImage："+path);
-                    AbToastUtil.showToast(AbCaptureActivity.this,"insertImage:"+path);
+					AbToastUtil.showToast(AbCaptureActivity.this,"insertImage:"+path);
                 }catch (Exception e){
                     e.printStackTrace();
                 }

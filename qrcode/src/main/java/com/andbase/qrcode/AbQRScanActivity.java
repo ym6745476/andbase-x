@@ -24,6 +24,7 @@ import com.andbase.library.app.global.AbAudioManager;
 import com.andbase.library.camera.AbCameraManager;
 import com.andbase.library.camera.AbScanRectView;
 import com.andbase.library.utils.AbAppUtil;
+
 import com.andbase.library.utils.AbToastUtil;
 import com.andbase.library.utils.AbViewUtil;
 import com.upu173.qrcode.R;
