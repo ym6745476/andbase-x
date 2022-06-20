@@ -223,25 +223,6 @@ public abstract class AbBaseActivity extends AppCompatActivity {
 		super.finish();
 	}
 
-	/**
-	 * 显示页面
-	 * @param rootView
-	 * @param layoutResID  布局ID
-	 */
-	public View showPageView(View rootView,@LayoutRes int layoutResID) {
-		View pageView = View.inflate(this,layoutResID,null);
-		((ViewGroup)rootView).addView(pageView,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
-		return pageView;
-	}
 
-	/**
-	 * 隐藏页面
-	 * @param rootView
-	 */
-	public void hidePageView(View rootView,View pageView) {
-		if(pageView !=null){
-			((ViewGroup)rootView).removeView(pageView);
-		}
-	}
 }
 
